@@ -1,70 +1,309 @@
-/* -------- Global Styling ------- */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    background: #ffffff;
-    color: #333;
+/* Fynest Decor & Gifting — Theme: Chocolate Brown (#6B3F21) */
+/* Paste this entire file into styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
+
+:root{
+  --primary: #6B3F21;    /* chocolate brown (main) */
+  --primary-dark: #5a3418;
+  --accent: #bfa089;     /* soft warm accent for highlights */
+  --bg: #ffffff;         /* clean white background */
+  --muted: #6b6b6b;
+  --card-shadow: rgba(107,63,33,0.08);
+  --glass: rgba(255,255,255,0.6);
+  --radius: 10px;
+}
+
+/* Global reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
 }
 
 /* Header */
-header {
-    background: #5d3b27;
-    padding: 15px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:20px 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.9));
+  position:sticky;
+  top:0;
+  z-index:30;
+  border-bottom:1px solid rgba(107,63,33,0.06);
+  backdrop-filter: blur(4px);
 }
 
-/* Navigation */
-nav {
-    background: #f6e8d6;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 12px 0;
+header .brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+header .brand img{
+  height:56px;
+  width:auto;
+  object-fit:contain;
+}
+header .brand h1{
+  font-family: 'Playfair Display', serif;
+  color:var(--primary);
+  font-size:24px;
+  line-height:1;
+  letter-spacing:0.2px;
+  margin:0;
+}
+header .brand p{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
 }
 
-nav a {
-    color: #5d3b27;
-    text-decoration: none;
-    font-weight: 600;
+/* Cart icon */
+.cart-icon{
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  position:relative;
+}
+#cart-count{
+  display:inline-block;
+  min-width:22px;
+  height:22px;
+  line-height:22px;
+  font-size:12px;
+  text-align:center;
+  border-radius:999px;
+  background:var(--primary);
+  color:white;
+  padding:0 6px;
+  box-shadow:0 4px 10px rgba(107,63,33,0.15);
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Slider */
+.slider{
+  max-width:1200px;
+  margin:22px auto;
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow: 0 6px 28px rgba(107,63,33,0.06);
+}
+.slider img.slide{
+  width:100%;
+  display:block;
+  opacity:0;
+  transform:scale(1.02);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+.slider img.active{
+  opacity:1;
+  transform:scale(1);
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
+/* Category nav */
+.category-nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:18px 12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.filter-btn{
+  background:transparent;
+  color:var(--primary);
+  border:1.5px solid rgba(107,63,33,0.12);
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  transition:all .25s ease;
+  font-size:14px;
+}
+.filter-btn:hover{
+  transform:translateY(-3px);
+  box-shadow: 0 6px 18px rgba(107,63,33,0.06);
+}
+.filter-btn.active{
+  background:var(--primary);
+  color:white;
+  border-color:var(--primary-dark);
+  box-shadow: 0 10px 28px rgba(107,63,33,0.12);
 }
 
-.hero h1 {
-    font-size: 32px;
-    color: #5d3b27;
-    margin-bottom: 10px;
+/* Products grid */
+.products-grid{
+  max-width:1200px;
+  margin:28px auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap:22px;
+  padding:0 18px 40px;
 }
 
-.button {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #5d3b27;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 20px;
-    font-size: 16px;
+/* Product card */
+.product-card{
+  background:linear-gradient(180deg, #fff, #fff);
+  border-radius: var(--radius);
+  overflow:hidden;
+  transition: transform .28s ease, box-shadow .28s ease;
+  box-shadow: 0 6px 18px var(--card-shadow);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+}
+.product-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(107,63,33,0.12);
+}
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+.product-card .pad{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-height:120px;
+}
+.product-card .name{
+  font-family: 'Playfair Display', serif;
+  color:var(--primary-dark);
+  font-weight:600;
+  font-size:16px;
+}
+.product-card .desc{
+  color:var(--muted);
+  font-size:13px;
+}
+.product-card .meta{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.product-card .price{
+  color:var(--primary);
+  font-weight:700;
+  font-size:16px;
+}
+
+/* Product detail page */
+.product-details-container{
+  max-width:1000px;
+  margin:36px auto;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:28px;
+  padding:0 18px 60px;
+  align-items:start;
+}
+#detail-img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow: 0 10px 30px rgba(107,63,33,0.08);
+}
+.product-details-container h2{
+  font-family: 'Playfair Display', serif;
+  color:var(--primary);
+  font-size:28px;
+  margin-bottom:8px;
+}
+.product-details-container p{
+  color:var(--muted);
+  margin-bottom:12px;
+}
+.product-details-container h3{
+  color:var(--primary);
+  margin-bottom:16px;
+  font-size:22px;
+}
+#addToCartBtn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  border: none;
+  cursor:pointer;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  box-shadow: 0 10px 30px rgba(107,63,33,0.12);
+  transition: transform .18s ease;
+}
+#addToCartBtn:hover{ transform: translateY(-3px); }
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-left:12px;
+  padding:12px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  background:transparent;
+  border:1px solid var(--primary);
+  color:var(--primary-dark);
+  font-weight:600;
+  transition: all .18s ease;
+}
+.whatsapp-btn:hover{
+  background:rgba(107,63,33,0.06);
+  transform:translateY(-3px);
 }
 
 /* Footer */
-footer {
-    background: #5d3b27;
-    text-align: center;
-    color: white;
-    padding: 15px;
-    margin-top: 40px;
-    font-size: 14px;
+footer{
+  text-align:center;
+  padding:28px;
+  color:var(--muted);
+  border-top:1px solid rgba(107,63,33,0.04);
+  margin-top:30px;
 }
+
+/* Responsive */
+@media (max-width: 880px){
+  .product-details-container{ grid-template-columns: 1fr; padding:0 14px;}
+  header .brand h1{font-size:20px}
+  .slider img.slide{height:220px; object-fit:cover;}
+  .product-card img{height:180px}
+}
+@media (max-width: 520px){
+  header{padding:12px 14px}
+  .products-grid{grid-template-columns: repeat(1,1fr); padding:0 10px;}
+  .slider img.slide{height:180px;}
+  .product-card img{height:160px}
+  .category-nav{padding:12px 10px}
+}
+
+/* Small helpers */
+.center{max-width:1200px;margin:0 auto}
+.small{font-size:13px;color:var(--muted)}
+
+/* subtle entrance animation for product grid */
+.products-grid .product-card{
+  opacity:0;
+  transform: translateY(8px);
+  animation: cardIn .45s forwards ease;
+}
+@keyframes cardIn{
+  to{opacity:1; transform: translateY(0);}
+}
+.products-grid .product-card:nth-child(1){animation-delay:0.02s}
+.products-grid .product-card:nth-child(2){animation-delay:0.04s}
+.products-grid .product-card:nth-child(3){animation-delay:0.06s}
+.products-grid .product-card:nth-child(4){animation-delay:0.08s}
