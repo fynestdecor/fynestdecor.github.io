@@ -1,0 +1,70 @@
+/* -------- Global Styling ------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #5d3b27;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Navigation */
+nav {
+    background: #f6e8d6;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0;
+}
+
+nav a {
+    color: #5d3b27;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    color: #5d3b27;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #5d3b27;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background: #5d3b27;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
