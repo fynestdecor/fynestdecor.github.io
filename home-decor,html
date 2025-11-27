@@ -1,43 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Decor – Fynest Decor</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<section class="category-header">
+  <h1>Home Decor Collection</h1>
+  <p>Stylish & premium home decor items to make your space beautiful.</p>
+</section>
 
-<header class="main-header">
-    <img src="logo.png" class="logo">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="handbags.html">Handbags</a>
-        <a href="home-decor.html">Home Decor</a>
-        <a href="mobile-accessories.html">Mobile Accessories</a>
-        <a href="viral-products.html">Viral Products</a>
-        <a href="cart.html" class="cart-btn">Cart 🛒</a>
-    </nav>
-</header>
+<section class="product-grid">
 
-<h2 class="page-title">Home Decor Collection</h2>
+  <!-- PRODUCT 1 -->
+  <div class="product-card">
+    <img src="images/products/decor1.jpg" alt="Decor Light Lamp">
+    <h3>Golden Touch LED Lamp</h3>
+    <p class="price">₹1,299</p>
+    <a href="product.html?id=decor1" class="btn">View Details</a>
+  </div>
 
-<div class="product-grid">
+  <!-- PRODUCT 2 -->
+  <div class="product-card">
+    <img src="images/products/decor2.jpg" alt="Table Decor">
+    <h3>Royal Table Showpiece</h3>
+    <p class="price">₹899</p>
+    <a href="product.html?id=decor2" class="btn">View Details</a>
+  </div>
 
-    <div class="product-card" onclick="openProduct('Decorative Table Vase','799','images/products/decor1.jpg')">
-        <img src="images/products/decor1.jpg">
-        <h3>Decorative Table Vase</h3>
-        <p class="price">₹799</p>
-    </div>
+  <!-- PRODUCT 3 -->
+  <div class="product-card">
+    <img src="images/products/decor3.jpg" alt="Wall Hanging Decor">
+    <h3>Modern Wall Hanging</h3>
+    <p class="price">₹599</p>
+    <a href="product.html?id=decor3" class="btn">View Details</a>
+  </div>
 
-    <div class="product-card" onclick="openProduct('Luxury Wall Frame','1299','images/products/decor2.jpg')">
-        <img src="images/products/decor2.jpg">
-        <h3>Luxury Wall Frame</h3>
-        <p class="price">₹1299</p>
-    </div>
+  <!-- PRODUCT 4 -->
+  <div class="product-card">
+    <img src="images/products/decor4.jpg" alt="Flower Vase">
+    <h3>Premium Ceramic Flower Vase</h3>
+    <p class="price">₹750</p>
+    <a href="product.html?id=decor4" class="btn">View Details</a>
+  </div>
 
-</div>
+  <!-- PRODUCT 5 -->
+  <div class="product-card">
+    <img src="images/products/decor5.jpg" alt="LED String Light">
+    <h3>Warm LED Fairy Light</h3>
+    <p class="price">₹499</p>
+    <a href="product.html?id=decor5" class="btn">View Details</a>
+  </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+  <!-- PRODUCT 6 -->
+  <div class="product-card">
+    <img src="images/products/decor6.jpg" alt="Decor Candle">
+    <h3>Luxury Scented Candle</h3>
+    <p class="price">₹349</p>
+    <a href="product.html?id=decor6" class="btn">View Details</a>
+  </div>
+
+</section>
